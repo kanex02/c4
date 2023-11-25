@@ -28,6 +28,9 @@ function Home() {
                 </Toolbar>
             </AppBar>
         </Box>
+        <Box sx={{width:"100%"}}>
+            <img src = '/background pic.jpg' style={{width:"100%"}}></img>
+        </Box>
     </div>
   );
 }
