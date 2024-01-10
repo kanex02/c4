@@ -1,25 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {createTheme, ThemeProvider} from "@mui/material";
+import Navbar from "./Navbar";
+import {createBrowserRouter, RouterProvider, redirect} from "react-router-dom";
+import Home from "./Home";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "*",
+    loader: () => {
+      return redirect('/');
+    }
+  }
+]);
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+      light: '#ffffff',
+      dark: '#ffffff',
+    },
+    secondary: {
+      main: "#ffffff"
+    }
+  },
+  typography: {
+    fontFamily: "Amiko"
+  }
+});
+
+export enum Language {
+  ENGLISH,
+  CHINESE
+}
+
+export const LanguageContext = React.createContext(Language.ENGLISH);
 
 function App() {
+  const [language, setLanguage] = useState(Language.ENGLISH);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <LanguageContext.Provider value={language}>
+        <Navbar language={language} setLanguage={setLanguage}/>
+        <RouterProvider router={router}/>
+      </LanguageContext.Provider>
+    </ThemeProvider>
   );
 }
 
