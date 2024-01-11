@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import './App.css';
-import {Box, Typography} from "@mui/material";
+import {Box, Link, Typography} from "@mui/material";
 import {Map, Today} from "@mui/icons-material";
 import InfoCard from "./components/InfoCard";
 import {Language, LanguageContext} from "./App";
@@ -17,32 +17,34 @@ function Home() {
         <Box sx={{
           position: "absolute",
           top: 0,
-          width: "100%",
-          height: "100%",
+          width: "95%",
+          height: "95%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          flexDirection: "column"}}
+          flexDirection: "column",
+          padding: "0 1rem"
+        }}
         >
-          <Typography variant={"h2"} sx={{color: "white", fontFamily: "Noto Serif SC"}}>
+          <Typography variant={"h2"} sx={{color: "white", fontFamily: "Noto Serif SC", fontSize: {xs: "2rem", sm: "2rem", md: "3rem", lg: "3.75rem"}}}>
             坎特伯利
           </Typography>
-          <Typography variant={"h2"} sx={{color: "white", fontFamily: "Noto Serif SC"}}>
+          <Typography variant={"h2"} sx={{color: "white", fontFamily: "Noto Serif SC", fontSize: {xs: "2rem", sm: "2rem", md: "3rem", lg: "3.75rem"}}}>
             华语基督教会
           </Typography>
-          <Typography variant={"h4"} sx={{color: "white", fontFamily: "Rubik"}}>
+          <Typography variant={"h4"} sx={{color: "white", fontFamily: "Rubik", fontSize: {xs: "1.5rem", sm: "1.5rem", md: "2rem", lg: "3rem"}}}>
             Canterbury Chinese Christian Church
           </Typography>
         </Box>
       </Box>
-      <Box sx={{padding: "5rem", display: "flex", justifyContent: "center"}}>
+      <Box sx={{padding: {xs: "3rem 1rem", sm: "3rem 1rem", md: "5rem"}, display: "flex", justifyContent: "center"}}>
         <InfoCard sx={{maxWidth: "100%", overflow: "initial"}}>
-          <Typography variant="h4">
+          <Typography variant="h4" sx={{fontSize: {xs: "1.5rem", sm: "1.5rem", md: "2rem", lg: "3rem"}}}>
             {language == Language.ENGLISH ? "Join us this Sunday" : "欢迎参加主日敬拜"}
           </Typography>
           <img
             src={require("./static/images/sermon_1.png")}
-            style={{width: "25rem"}}
+            style={{width: "25rem", maxWidth: "80%"}}
             alt={language == Language.ENGLISH ? "Picture of a service" : "主日敬拜的照片"}
           />
 
@@ -52,10 +54,7 @@ function Home() {
             justifyContent: "center",
             alignContent: "center",
             width: "100%",
-            flexWrap: "wrap",
-            sm: {
-              color: "red"
-            }
+            flexWrap: "wrap"
           }}>
             <div style={{width: "220px", flexShrink: 0}}>
               <Today style={{marginTop: "2rem", fontSize: "3rem"}}/>
@@ -64,13 +63,13 @@ function Home() {
               </Typography>
             </div>
 
-            <a href="https://maps.app.goo.gl/CBTuM1yidHDhVBKH9"
+            <Link href="https://maps.app.goo.gl/CBTuM1yidHDhVBKH9"
                target="_blank"
                rel="noopener noreferrer"
-               style={{color: "black", textDecoration: "underline", flexShrink: 0}}
+               sx={{color: "black", flexShrink: 0, textDecorationColor: "transparent !important",
+                 transition: "0.2s ease-in-out",'&:hover':{textDecorationColor: "grey !important"}}}
             >
-              <Box sx={{width: "220px", textDecoration: "underline",
-                textDecorationColor: "transparent", transition: "0.2s ease-in-out",'&:hover':{textDecorationColor: "grey"}}}>
+              <Box sx={{width: "220px"}}>
                 <Map sx={{marginTop: "2rem", fontSize: "3rem"}}/>
                 <Typography variant="h6">
                   150 Withells Road,
@@ -79,7 +78,7 @@ function Home() {
                   Avonhead, Christchurch
                 </Typography>
               </Box>
-            </a>
+            </Link>
 
             <div style={{width: "220px", flexShrink: 0}}>
               <div style={{height: "48px", marginTop: "2rem", display: "flex",
