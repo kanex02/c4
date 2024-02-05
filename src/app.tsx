@@ -1,16 +1,26 @@
 import React, {useState} from 'react';
-import './App.css';
+import './app.css';
 import {createTheme, ThemeProvider} from "@mui/material";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import {createBrowserRouter, RouterProvider, redirect} from "react-router-dom";
-import Home from "./Home";
-import Footer from "./components/Footer";
+import Home from "./home";
+import Footer from "./components/footer";
+import {About} from "./about";
+import {Gallery} from "./gallery";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>
+  },
+  {
+    path: "/about",
+    element: <About/>
+  },
+  {
+    path: "/gallery",
+    element: <Gallery/>
   },
   {
     path: "*",
@@ -32,7 +42,10 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: "Amiko"
+    fontFamily: "Amiko",
+    h5: {
+      borderBottom: "1px lightgray solid"
+    }
   }
 });
 

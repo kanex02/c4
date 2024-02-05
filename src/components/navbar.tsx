@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../app.css';
 import {
   AppBar,
   Box,
@@ -14,7 +14,7 @@ import {
   Typography
 } from "@mui/material";
 import {ArrowDropDown, Language, Menu as MenuIcon} from "@mui/icons-material";
-import {Language as LanguageEnum} from "../App";
+import {Language as LanguageEnum} from "../app";
 
 interface NavbarProps {
   language: LanguageEnum,
@@ -96,48 +96,45 @@ function Navbar(props: NavbarProps) {
             <MenuItem onClick={handleMenuClose}>
               <a style={{color: "black"}} href="/">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "HOME" : "主页"}
+                  {language === LanguageEnum.ENGLISH ? "HOME" : "主页"}
                 </Button>
               </a>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
               <a style={{color: "black", textDecoration: "none"}} href="/about">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "About Us" : "关于"}
+                  {language === LanguageEnum.ENGLISH ? "About Us" : "关于"}
                 </Button>
               </a>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
-              <a style={{color: "black", textDecoration: "none"}} href="/groups">
+              <a style={{color: "black", textDecoration: "none"}} href="/gallery">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "Group Info" : "关于"}
-                </Button>
-              </a>
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose}>
-              <a style={{color: "black", textDecoration: "none"}} href="/events">
-                <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "Events" : "关于"}
+                  {language === LanguageEnum.ENGLISH ? "Gallery" : "相册"}
                 </Button>
               </a>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
               <a style={{color: "black"}} href="/recordings">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "RECORDINGS" : "录像"}
+                  {language === LanguageEnum.ENGLISH ? "RECORDINGS" : "录像"}
                 </Button>
               </a>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
               <a style={{color: "black"}} href="/findus">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language == LanguageEnum.ENGLISH ? "FIND US" : "地址"}
+                  {language === LanguageEnum.ENGLISH ? "FIND US" : "地址"}
                 </Button>
               </a>
             </MenuItem>
           </Menu>
         </Box>
-        <Box sx={{ height: "100%", display: 'flex', flexDirection: "row", flexGrow: 1, alignItems: "end" }}>
+
+
+
+        <Box sx={{ height: "100%", display: 'flex', flexDirection: "row", flexGrow: 1, alignItems: "end",
+          cursor: "pointer" }} onClick={event => window.location.href = '/'}>
           <Box sx={{display: {xs:"none", sm:"block"}}}>
             <img src={require("../static/images/img.png")} alt="" style={{height: "10ch"}}/>
           </Box>
@@ -149,7 +146,7 @@ function Navbar(props: NavbarProps) {
               fontSize: "1.2rem",
               lineHeight: "1.4rem"
             }}>
-              {language == LanguageEnum.ENGLISH ? "Canterbury Chinese" : "坎特伯利"}
+              {language === LanguageEnum.ENGLISH ? "Canterbury Chinese" : "坎特伯利"}
             </Typography>
             <Typography component="div" sx={{
               maxWidth: "16ch",
@@ -158,18 +155,22 @@ function Navbar(props: NavbarProps) {
               fontSize: "1.2rem",
               lineHeight: "1.4rem"
             }}>
-              {language == LanguageEnum.ENGLISH ? "Christian Church" : "华语基督教会"}
+              {language === LanguageEnum.ENGLISH ? "Christian Church" : "华语基督教会"}
             </Typography>
           </Box>
         </Box>
+
+
+
+
         <Box sx={{display: {xs:"none", sm: "none", md: "flex"}, flexGrow: 1, flexDirection: "row-reverse"}}>
           <a style={{color: "black"}} href="/findus">
             <Button color="inherit"
-                    sx={{fontFamily: "Amiko"}}>{language == LanguageEnum.ENGLISH ? "FIND US" : "地址"}</Button>
+                    sx={{fontFamily: "Amiko"}}>{language === LanguageEnum.ENGLISH ? "FIND US" : "地址"}</Button>
           </a>
           <a style={{color: "black"}} href="/recordings">
             <Button color="inherit"
-                    sx={{fontFamily: "Amiko"}}>{language == LanguageEnum.ENGLISH ? "RECORDINGS" : "录像"}</Button>
+                    sx={{fontFamily: "Amiko"}}>{language === LanguageEnum.ENGLISH ? "RECORDINGS" : "录像"}</Button>
           </a>
           <Button
             ref={anchorRef}
@@ -180,7 +181,7 @@ function Navbar(props: NavbarProps) {
             onClick={handleToggle}
             sx={{color: "black"}}
           >
-            {language == LanguageEnum.ENGLISH ? "ABOUT" : "关于"} <ArrowDropDown sx={{transform: "translateY(-10%)"}}/>
+            {language === LanguageEnum.ENGLISH ? "ABOUT" : "关于"} <ArrowDropDown sx={{transform: "translateY(-10%)"}}/>
           </Button>
           <Popper
             open={open}
@@ -208,17 +209,12 @@ function Navbar(props: NavbarProps) {
                     >
                       <MenuItem onClick={handleClose}>
                         <a style={{color: "black", textDecoration: "none"}} href="/about">
-                          {language == LanguageEnum.ENGLISH ? "About Us" : "关于"}
+                          {language === LanguageEnum.ENGLISH ? "About Us" : "关于"}
                         </a>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <a style={{color: "black", textDecoration: "none"}} href="/groups">
-                          {language == LanguageEnum.ENGLISH ? "Group Info" : "关于"}
-                        </a>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <a style={{color: "black", textDecoration: "none"}} href="/events">
-                          {language == LanguageEnum.ENGLISH ? "Events" : "关于"}
+                        <a style={{color: "black", textDecoration: "none"}} href="/gallery">
+                          {language === LanguageEnum.ENGLISH ? "Gallery" : "相册"}
                         </a>
                       </MenuItem>
                     </MenuList>
@@ -229,17 +225,17 @@ function Navbar(props: NavbarProps) {
           </Popper>
           <a style={{color: "black"}} href="/">
             <Button color="inherit"
-                    sx={{fontFamily: "Amiko"}}>{language == LanguageEnum.ENGLISH ? "HOME" : "主页"}</Button>
+                    sx={{fontFamily: "Amiko"}}>{language === LanguageEnum.ENGLISH ? "HOME" : "主页"}</Button>
           </a>
         </Box>
         <Button
           color="inherit"
           sx={{backgroundColor: "#B7EAAF", margin: "2ch", paddingX: "3ch", minWidth: "12ch"}}
-          onClick={() => setLanguage(language == LanguageEnum.ENGLISH? LanguageEnum.CHINESE : LanguageEnum.ENGLISH)}
+          onClick={() => setLanguage(language === LanguageEnum.ENGLISH? LanguageEnum.CHINESE : LanguageEnum.ENGLISH)}
         >
           <Language style={{height: "1rem", width: "1rem"}}/>
           <Typography variant="body1" sx={{transform: "translateY(10%)", textTransform: "none"}}>
-            {language == LanguageEnum.ENGLISH ? "中文" : "English"}
+            {language === LanguageEnum.ENGLISH ? "中文" : "English"}
           </Typography>
         </Button>
       </Toolbar>
