@@ -114,7 +114,7 @@ function Home() {
             <div style={{width: "350px", display: "flex", flexDirection: "column", alignItems: "center"}}>
               <img src={require("./static/images/list_youth_group_img 1.png")} alt="Zoom logo" style={{height: "200px", marginBottom: "1.5rem"}}/>
               <Typography variant="h6">
-                {language === Language.ENGLISH ? "Young Adult Group" : "社青团契"}
+                {language === Language.ENGLISH ? "Young Working Adults' Group" : "社青团契"}
               </Typography>
               <Typography variant="h6">
                 {language === Language.ENGLISH ? "Saturday 7:30pm" : "周六 7：30pm"}

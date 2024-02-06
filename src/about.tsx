@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Box, Typography} from "@mui/material";
 import {Page} from "./components/page";
 import {PageSection} from "./components/pageSection";
+import {Language as LanguageEnum, LanguageContext} from "./app";
 
 export function About() {
+  const language = useContext(LanguageContext);
+
   return (
     <Page>
       <Box sx={{
@@ -15,7 +18,7 @@ export function About() {
       }}>
         <div style={{position: "relative", display: "flex", justifyContent: "center"}}>
           <Typography variant="h3" sx={{position: "absolute", top: "40%", color: "white", backdropFilter: "blur(2px)", backgroundColor: "rgba(0, 0, 0, 0.4)", padding: "1rem 2.5rem 0.5rem"}}>
-            About Us
+            {language === LanguageEnum.ENGLISH ? "About Us" : "关于我们"}
           </Typography>
           <img src={require("./static/images/church_photo.png")}
                style={{width: "100%", height: "auto", flexShrink: 0}}

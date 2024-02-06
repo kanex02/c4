@@ -18,7 +18,7 @@ function Footer() {
           </Link>
           <hr style={{width: "50%", maxWidth: "400px"}}/>
           <Typography sx={{color: "white", fontSize: "0.8rem", textAlign: "center"}}>
-            <Copyright sx={{transform: "translateY(15%)"}}/> 2023 Canterbury Chinese Christian Church
+            <Copyright sx={{transform: "translateY(25%) scale(0.8)"}}/> 2023 Canterbury Chinese Christian Church
           </Typography>
         </Box>
       </Toolbar>

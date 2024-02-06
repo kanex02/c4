@@ -4,7 +4,7 @@ import {Box} from "@mui/material";
 export function Page({ children }) {
   return (
     <div style={{padding: "1rem 1rem 10rem", position: "relative", display: "flex", flexDirection: "column", alignItems: "center"}}>
-      <Box sx={{maxWidth: "850px"}}>
+      <Box sx={{maxWidth: "min(100%, 850px)"}}>
         {children}
       </Box>
     </div>

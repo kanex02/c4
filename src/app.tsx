@@ -2,33 +2,43 @@ import React, {useState} from 'react';
 import './app.css';
 import {createTheme, ThemeProvider} from "@mui/material";
 import Navbar from "./components/navbar";
-import {createBrowserRouter, RouterProvider, redirect} from "react-router-dom";
+import {Route, BrowserRouter, Routes} from "react-router-dom";
 import Home from "./home";
 import Footer from "./components/footer";
 import {About} from "./about";
 import {Gallery} from "./gallery";
+import {FindUs} from "./findUs";
+import {Contact} from "./contact";
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home/>
-  },
-  {
-    path: "/about",
-    element: <About/>
-  },
-  {
-    path: "/gallery",
-    element: <Gallery/>
-  },
-  {
-    path: "*",
-    loader: () => {
-      return redirect('/');
-    }
-  }
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home/>
+//   },
+//   {
+//     path: "/about",
+//     element: <About/>
+//   },
+//   {
+//     path: "/gallery",
+//     element: <Gallery/>
+//   },
+//   {
+//     path: "/findus",
+//     element: <FindUs/>
+//   },
+//   {
+//     path: "/contact",
+//     element: <Contact/>
+//   },
+//   {
+//     path: "*",
+//     loader: () => {
+//       return redirect('/');
+//     }
+//   }
+// ]);
 
 const theme = createTheme({
   palette: {
@@ -61,8 +71,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <LanguageContext.Provider value={language}>
-        <Navbar language={language} setLanguage={setLanguage}/>
-        <RouterProvider router={router}/>
+        <BrowserRouter>
+          <Navbar language={language} setLanguage={setLanguage}/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/findus" element={<FindUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
         <Footer/>
       </LanguageContext.Provider>
     </ThemeProvider>
