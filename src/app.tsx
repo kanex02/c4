@@ -9,36 +9,7 @@ import {About} from "./about";
 import {Gallery} from "./gallery";
 import {FindUs} from "./findUs";
 import {Contact} from "./contact";
-
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home/>
-//   },
-//   {
-//     path: "/about",
-//     element: <About/>
-//   },
-//   {
-//     path: "/gallery",
-//     element: <Gallery/>
-//   },
-//   {
-//     path: "/findus",
-//     element: <FindUs/>
-//   },
-//   {
-//     path: "/contact",
-//     element: <Contact/>
-//   },
-//   {
-//     path: "*",
-//     loader: () => {
-//       return redirect('/');
-//     }
-//   }
-// ]);
+import ScrollToTop from "./components/scrollToTop";
 
 const theme = createTheme({
   palette: {
@@ -72,6 +43,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <LanguageContext.Provider value={language}>
         <BrowserRouter>
+          <ScrollToTop/>
           <Navbar language={language} setLanguage={setLanguage}/>
           <Routes>
             <Route path="/" element={<Home />} />

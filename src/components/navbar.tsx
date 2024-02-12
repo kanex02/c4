@@ -68,7 +68,9 @@ function Navbar(props: NavbarProps) {
     setAnchorEl(event.currentTarget);
   };
   const handleMenuClose = () => {
-    setAnchorEl(null);
+    setTimeout(() => {
+      setAnchorEl(null);
+    }, 50);
   };
 
   return (

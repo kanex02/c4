@@ -44,7 +44,6 @@ export function Contact() {
             Email: ccccnz1996@gmail.com<br/>
             Phone: (03)357-4119 (Service Center)<br/>
             <br/>
-            <hr/>
             <br/>
             Lincoln/Rolleston Branch<br/>
             <br/>
@@ -70,7 +69,6 @@ export function Contact() {
             Email: ccccnz1996@gmail.com<br/>
             手机: (03)357-4119 (Service Center)<br/>
             <br/>
-            <hr/>
             <br/>
             林肯/活石分会<br/>
             <br/>
