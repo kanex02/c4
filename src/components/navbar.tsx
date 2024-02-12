@@ -104,7 +104,7 @@ function Navbar(props: NavbarProps) {
             <MenuItem onClick={handleMenuClose}>
               <Link style={{color: "black", textDecoration: "none"}} to="/about">
                 <Button color="inherit" sx={{fontFamily: "Amiko"}}>
-                  {language === LanguageEnum.ENGLISH ? "About Us" : "关于我们"}
+                  {language === LanguageEnum.ENGLISH ? "About Us" : "关于教会"}
                 </Button>
               </Link>
             </MenuItem>
@@ -212,7 +212,7 @@ function Navbar(props: NavbarProps) {
                     >
                       <MenuItem onClick={handleClose}>
                         <Link style={{color: "black", textDecoration: "none"}} to="/about">
-                          {language === LanguageEnum.ENGLISH ? "About Us" : "关于我们"}
+                          {language === LanguageEnum.ENGLISH ? "About Us" : "关于教会"}
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
