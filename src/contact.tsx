@@ -18,7 +18,7 @@ export function Contact() {
         alignItems: "center"
       }}>
         <div style={{position: "relative", display: "flex", justifyContent: "center"}}>
-          <Typography variant="h3" sx={{position: "absolute", top: "40%", color: "white", backdropFilter: "blur(2px)", backgroundColor: "rgba(0, 0, 0, 0.4)", padding: "1rem 2.5rem 0.5rem"}}>
+          <Typography variant="h4" sx={{position: "absolute", top: "40%", color: "white", backdropFilter: "blur(2px)", backgroundColor: "rgba(0, 0, 0, 0.4)", padding: "1rem 2.5rem 0.5rem"}}>
             {(language === LanguageEnum.ENGLISH) ? "Contact Us" : "联系方式"}
           </Typography>
           <img src={require("./static/images/church.jpg")}

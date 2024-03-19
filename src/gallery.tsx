@@ -11,8 +11,8 @@ export function Gallery() {
     <Box sx={{background: "#E6EEDE"}}>
       <Page>
         <PageSection>
-          <Typography variant="h3">
-            {(language === LanguageEnum.ENGLISH) ? "Gallery" : ""}
+          <Typography variant="h4">
+            {(language === LanguageEnum.ENGLISH) ? "Gallery" : "相册"}
           </Typography>
         </PageSection>
         <PageSection sx={{gap: "2rem"}}>

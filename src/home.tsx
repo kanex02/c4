@@ -90,6 +90,10 @@ function Home() {
               <Typography variant="h6">
                 534 361 6425
               </Typography>
+              <Typography variant="h6">
+                {language === Language.ENGLISH ? "Password" : "密码"}: 1234
+              </Typography>
+
             </div>
           </Box>
 
@@ -126,7 +130,7 @@ function Home() {
                 {language === Language.ENGLISH ? "Student Group" : "学生团契"}
               </Typography>
               <Typography variant="h6">
-                {language === Language.ENGLISH ? "Saturday 5pm" : "周六 5pm"}
+                {language === Language.ENGLISH ? "Saturday 7:30pm" : "周六 7:30pm"}
               </Typography>
             </div>
 
